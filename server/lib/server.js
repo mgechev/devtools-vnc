@@ -6,12 +6,16 @@ var RFB = require('rfb'),
     clients = [];
 
 function createRfbConnection(config, socket) {
-  var r = RFB({
-    host: config.host,
-    port: config.port,
-    password: config.password,
-    securityType: 'vnc',
-  });
+  try {
+    var r = RFB({
+      host: config.host,
+      port: config.port,
+      password: config.password,
+      securityType: 'vnc',
+    });
+  } catch (e) {
+    console.log(e);
+  }
   addEventHandlers(r, socket);
   return r;
 }
@@ -39,6 +43,10 @@ function addEventHandlers(r, socket) {
     r.requestRedraw();
     initialized = true;
   }
+
+  r.on('error', function () {
+    winston.info('Error while talking with the remote RFB server');
+  });
 
   r.on('raw', function (rect) {
     !initialized && handleConnection(rect.width, rect.height);

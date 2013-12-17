@@ -1,57 +1,64 @@
 html, body {
-    height: 100%;
-    font-family: Verdana;
+  height: 100%;
+  font-family: Verdana;
+  margin: 0;
+  padding: 0;
 }
 
 .form-wrapper {
-    width: 350px;
-    margin: auto;
-    margin-top: 100px;
-    display: block;
+  width: 350px;
+  margin: auto;
+  display: block;
 }
 
 .hidden {
-    display: none !important;
+  display: none !important;
 }
 
 .form-wrapper .form-horizontal .controls {
-    margin-left: 90px;
+  margin-left: 90px;
 }
 
 #screen {
-    cursor: none;
-    margin: auto;
+  cursor: none;
+  margin: auto;
 }
 
 #vnc-client-screen {
-    position: absolute;
-    top: 99999px;
-    left: -99999px;
-    visibility: hidden;
+  position: absolute;
+  top: 99999px;
+  left: -99999px;
+  visibility: hidden;
 }
 
 #loading-bar {
-    text-align: center;
+  text-align: center;
 }
 
 .error {
-    color: red;
-    text-align: center;
+  color: red;
+  text-align: center;
 }
 
 .controls {
-    display: inline-block;
+  display: inline-block;
 }
 
 .control-label {
-    width: 35px;
-    display: inline-block;
-    color: #444;
-    font-size: 1em;
+  width: 35px;
+  display: inline-block;
+  color: #444;
+  font-size: 1em;
 }
 
 .form-wrapper input,
 .form-wrapper button {
-    font-size: 1em;
-    margin-top: 10px;
+  font-size: 1em;
+  margin-top: 10px;
+}
+
+#canvas-wrapper,
+#loading-bar,
+#form-wrapper {
+  margin-top: 100px;
 }

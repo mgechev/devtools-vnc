@@ -183,7 +183,11 @@
 
   Client.prototype.connect = function (config) {
     var self = this;
-    this.socket = io.connect(Config.URL);
+    if (config.forceNewConnection) {
+      this.socket = io.connect(Config.URL);
+    } else {
+      this.socket = io.connect(Config.URL, { 'force new connection': true });
+    }
     this.socket.emit('init', {
       host: config.host,
       port: config.port,
@@ -224,12 +228,13 @@
   };
 
 
-  var client, vncClientScreen, screen;
+  var connections = 0,
+      client, vncClientScreen, screen;
 
-  chrome.runtime.sendMessage({ type: 'tab-url' }, function (response) {
-    response = response.replace(/^\w+:\/\//, '').replace(/\/$/, '');
-    document.getElementById('host').value = response;
-  });
+  // chrome.runtime.sendMessage({ type: 'tab-url' }, function (response) {
+  //   response = response.replace(/^\w+:\/\//, '').replace(/\/$/, '');
+  //   document.getElementById('host').value = response;
+  // });
 
   function initializeClient() {
     var vncClientCanvas = document.getElementById('vnc-client-screen'),
@@ -248,9 +253,11 @@
       host: document.getElementById('host').value,
       port: parseInt(document.getElementById('port').value, 10),
       password: document.getElementById('password').value,
+      forceNewConnection: (connections > 0) ? true : false,
       success: function () {
         loadingBar.classList.add('hidden');
         canvasWrapper.classList.remove('hidden');
+        connections += 1;
       },
       error: function () {
         loadingBar.classList.add('hidden');

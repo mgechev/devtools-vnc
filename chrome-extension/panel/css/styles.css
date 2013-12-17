@@ -5,10 +5,34 @@ html, body {
   padding: 0;
 }
 
+body {
+  -webkit-transition: background-color 1s;
+  -moz-transition: background-color 1s;
+  -ms-transition: background-color 1s;
+  -o-transition: background-color 1s;
+  transition: background-color 1s;
+  background-color: #fff;
+}
+
+body.connection-active {
+  background-color: #222;
+}
+
+a {
+  text-decoration: none;
+  color: #7AC3FF;
+}
+
+#disconnectBtn div {
+  display: inline-block;
+  padding: 4px;
+}
+
 .form-wrapper {
   width: 350px;
   margin: auto;
   display: block;
+  margin-top: 100px;
 }
 
 .hidden {
@@ -55,10 +79,20 @@ html, body {
 .form-wrapper button {
   font-size: 1em;
   margin-top: 10px;
+  outline: none;
+  padding: 4px;
+  border-radius: 3px;
+  border: 1px solid #999;
 }
 
-#canvas-wrapper,
-#loading-bar,
-#form-wrapper {
-  margin-top: 100px;
+.form-wrapper button {
+  background-color: #eee;
+  padding: 5px;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+.form-wrapper input:focus,
+.form-wrapper button:focus {
+  border: 1px solid #333;
 }

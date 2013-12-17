@@ -231,10 +231,10 @@
   var connections = 0,
       client, vncClientScreen, screen;
 
-  // chrome.runtime.sendMessage({ type: 'tab-url' }, function (response) {
-  //   response = response.replace(/^\w+:\/\//, '').replace(/\/$/, '');
-  //   document.getElementById('host').value = response;
-  // });
+  chrome.runtime.sendMessage({ type: 'tab-url' }, function (response) {
+    response = response.replace(/^\w+:\/\//, '').replace(/\/$/, '');
+    document.getElementById('host').value = response;
+  });
 
   function initializeClient() {
     var vncClientCanvas = document.getElementById('vnc-client-screen'),
@@ -257,6 +257,7 @@
       success: function () {
         loadingBar.classList.add('hidden');
         canvasWrapper.classList.remove('hidden');
+        document.body.classList.add('connection-active');
         connections += 1;
       },
       error: function () {
@@ -285,6 +286,7 @@
         canvasWrapper = document.getElementById('canvas-wrapper');
     form.classList.remove('hidden');
     canvasWrapper.classList.add('hidden');
+    document.body.classList.remove('connection-active');
   }
 
 }());

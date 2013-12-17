@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" href="./css/styles.css" />
+    </head>
+    <body>
+        <div id="loading-bar" class="hidden">
+          <img src="images/loading.gif" alt="">
+        </div>
+        <div class="form-wrapper" id="form-wrapper">
+            <form class="form-horizontal" id="main-form">
+              <div class="error"></div>
+              <br>
+              <div class="control-group">
+                <label class="control-label" for="host">Host:</label>
+                <div class="controls">
+                  <input type="text" id="host" name="host" value="192.168.100.7" /><br />
+                </div>
+              </div>
+              <div class="control-group">
+                <label class="control-label" for="port">Port:</label>
+                <div class="controls">
+                  <input type="number" id="port" name="port" value="5900" /><br />
+                </div>
+              </div>
+              <div class="control-group">
+                <label class="control-label" for="password">Password:</label>
+                <div class="controls">
+                  <input type="password" id="password" name="password" value="paralaks" /><br />
+                </div>
+              </div>
+              <div class="control-group">
+                <div class="controls">
+                  <button class="btn" id="loginBtn">Log in</button>
+                </div>
+              </div>
+            </form>
+        </div>
+        <div id="canvas-wrapper" class="hidden">
+          <a href="#" id="disconnectBtn">Disconnect</a>
+          <canvas id="vnc-client-screen">
+          </canvas>
+          <canvas id="screen">
+          </canvas>
+        </div>
+        <script src="./lib/socket.io.js"></script>
+        <script src="./js/client.js"></script>
+    </body>
+</html>

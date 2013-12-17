@@ -1,0 +1,57 @@
+html, body {
+    height: 100%;
+    font-family: Verdana;
+}
+
+.form-wrapper {
+    width: 350px;
+    margin: auto;
+    margin-top: 100px;
+    display: block;
+}
+
+.hidden {
+    display: none !important;
+}
+
+.form-wrapper .form-horizontal .controls {
+    margin-left: 90px;
+}
+
+#screen {
+    cursor: none;
+    margin: auto;
+}
+
+#vnc-client-screen {
+    position: absolute;
+    top: 99999px;
+    left: -99999px;
+    visibility: hidden;
+}
+
+#loading-bar {
+    text-align: center;
+}
+
+.error {
+    color: red;
+    text-align: center;
+}
+
+.controls {
+    display: inline-block;
+}
+
+.control-label {
+    width: 35px;
+    display: inline-block;
+    color: #444;
+    font-size: 1em;
+}
+
+.form-wrapper input,
+.form-wrapper button {
+    font-size: 1em;
+    margin-top: 10px;
+}

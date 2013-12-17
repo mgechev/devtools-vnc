@@ -1,0 +1,29 @@
+{
+  "manifest_version": 2,
+  "name": "Devtools VNC",
+  "version": "0.0.1",
+  "author": "Minko Gechev",
+  "description": "VNC client for Chrome Devtools",
+  "devtools_page": "devtools.html",
+  "content_security_policy": "script-src 'self' 'unsafe-eval'; object-src 'self'",
+  "icons": {
+    "128": "icons/app-icon-128.png",
+    "64": "icons/app-icon-64.png",
+    "48": "icons/app-icon-48.png",
+    "32": "icons/app-icon-32.png",
+    "16": "icons/app-icon-16.png"
+  },
+  "background": {
+    "scripts": [
+      "background.js"
+    ]
+  },
+  "permissions": [
+    "tabs"
+  ],
+  "app":{
+    "launch": {
+      "local_path": "panel/index.html"
+    }
+  }
+}

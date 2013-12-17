@@ -2,6 +2,10 @@
 
 This repository contains chrome extension and server which can be used for embedding VNC client inside your chrome devtools.
 
+##Demo
+
+![Demo](http://blog.mgechev.com/wp-content/uploads/devtools-vnc.gif)
+
 #Installation
 
 ##Install the extension

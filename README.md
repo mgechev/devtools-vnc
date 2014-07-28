@@ -46,5 +46,3 @@ Now in the form in the **VNC Client** tab enter hostname, port and password of v
 
 This software is distributed under the terms of the MIT.
 
-[![Bitdeli Badge](https://d2weczhvl823v0.cloudfront.net/mgechev/devtools-vnc/trend.png)](https://bitdeli.com/free "Bitdeli Badge")
-

@@ -1,14 +1,14 @@
-#Devtools VNC
+# Devtools VNC
 
 This repository contains chrome extension and server which can be used for embedding VNC client inside your chrome devtools.
 
-##Demo
+## Demo
 
 ![Demo](http://blog.mgechev.com/wp-content/uploads/devtools-vnc.gif)
 
-#Installation
+# Installation
 
-##Install the extension
+## Install the extension
 
 In order to install the chrome extension:
 
@@ -19,7 +19,7 @@ In order to install the chrome extension:
 
 When you finish with these steps open Chrome Devtools, you should see new tab named **VNC Client**.
 
-##Install the server
+## Install the server
 
 In order to install the server use:
 
@@ -42,7 +42,6 @@ Now in the form in the **VNC Client** tab enter hostname, port and password of v
 1. Only `vnc` security type is supported
 2. Only `raw` format of the rectangles is supported
 
-#License
+# License
 
 This software is distributed under the terms of the MIT.
-
